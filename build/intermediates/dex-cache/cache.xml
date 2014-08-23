@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<pre-dex-items>
+
+    <item
+        dex="C:\Users\ahuskano\Sensors\app\Wufy\app\build\intermediates\pre-dexed\debug\support-v4-19.1.0-e8a2d4d3ccf6be0e183bb4531f19be7d0aaaf735.jar"
+        jar="C:\Users\ahuskano\AppData\Local\Android\android-studio\sdk\extras\android\m2repository\com\android\support\support-v4\19.1.0\support-v4-19.1.0.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="85f201b380937e61a9dce6ca90ccf6872abbfb67"/>
+    <item
+        dex="C:\Users\ahuskano\Sensors\app\Wufy\app\build\intermediates\pre-dexed\debug\classes-cdf8e373484f88d4543866ad850f72f0c3ce2ebd.jar"
+        jar="C:\Users\ahuskano\Sensors\app\Wufy\build\intermediates\exploded-aar\com.android.support\appcompat-v7\19.1.0\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="3499ceba05ca1f6037c6a2fad73df8f636224a28"/>
+    <item
+        dex="C:\Users\ahuskano\Sensors\app\Wufy\app\build\intermediates\pre-dexed\debug\classes-0764f7fcbb9a36ef50387d8d7755146c6ce4c0a6.jar"
+        jar="C:\Users\ahuskano\Sensors\app\Wufy\build\intermediates\exploded-aar\net.simonvt.menudrawer\menudrawer\3.0.6\classes.jar"
+        jumboMode="false"
+        revision="19.1.0"
+        sha1="6c43e8970e14e22ed8ea6bee207b27829422d516"/>
+
+</pre-dex-items>

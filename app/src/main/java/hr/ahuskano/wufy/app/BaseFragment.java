@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import hr.ahuskano.wufy.app.adapters.MenuAdapter;
-import hr.ahuskano.wufy.app.types.Category;
 import hr.ahuskano.wufy.app.types.Item;
 
 /**
@@ -59,13 +58,7 @@ public abstract class BaseFragment extends FragmentActivity implements MenuAdapt
     }
 
     private List<Object> getItems(List<Object> menu) {
-        menu.add(new Category("Cats"));
-        menu.add(new Item("Micka"));
-        menu.add(new Item("Stakoric"));
-        menu.add(new Item("Miki"));
-        menu.add(new Category("Dogs"));
-        menu.add(new Item("Zuco"));
-        menu.add(new Item("Rex"));
+        menu.add(new Item(getString(R.string.available_sensors)));
         return menu;
     }
 
