@@ -74,10 +74,11 @@ public class MenuAdapter extends BaseAdapter {
                 view = LayoutInflater.from(context).inflate(R.layout.menu_row_item, parent, false);
             TextView viewItem = ((TextView) view);
             viewItem.setText(((Item) item).getTitle());
-            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2)
+          /*  if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2)
                 viewItem.setCompoundDrawablesRelativeWithIntrinsicBounds(((Item) item).getIcon(), 0, 0, 0);
             else
                 viewItem.setCompoundDrawablesWithIntrinsicBounds(((Item) item).getIcon(), 0, 0, 0);
+      */
         }
         view.setTag(R.id.mdActiveViewPosition, position);
         if (position == menuActivePosition) {

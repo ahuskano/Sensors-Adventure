@@ -3,22 +3,41 @@ package hr.ahuskano.wufy.app;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.SeekBar;
+import android.widget.FrameLayout;
 
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
+import hr.ahuskano.wufy.app.fragments.FragmentAvailableSensors;
+import hr.ahuskano.wufy.app.fragments.FragmentBall;
+import hr.ahuskano.wufy.app.fragments.FragmentCompas;
+import hr.ahuskano.wufy.app.fragments.FragmentLight;
+import hr.ahuskano.wufy.app.fragments.FragmentShuffedDetect;
 import hr.ahuskano.wufy.app.types.Item;
+import hr.ahuskano.wufy.app.utils.Singleton;
 
 
-public class MainActivity extends BaseFragment {
-
+public class MainActivity extends DrawerMenuActivity {
+    private FrameLayout container;
+    private final String TAG = MainActivity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         initDrawer();
+        initView();
+    }
+
+    private void initView() {
+        container = (FrameLayout) findViewById(R.id.flFragments);
+        Singleton.getInstance().setContainerId(container.getId());
+        initFirstFragment();
+
+    }
+
+    private void initFirstFragment() {
+        getSupportFragmentManager().beginTransaction().add(container.getId(), new FragmentAvailableSensors()).commit();
+
     }
 
     private void initDrawer() {
@@ -58,6 +77,23 @@ public class MainActivity extends BaseFragment {
 
     @Override
     protected void onMenuItemClicked(int position, Item item) {
+        switch (item.getId()) {
+            case FRAGMENT_AVAILABLE_SENSORS:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentAvailableSensors()).commit();
+                break;
+            case FRAGMENT_COMPAS:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentCompas()).commit();
+                break;
+            case FRAGMENT_SHUFFED_DETECT:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentShuffedDetect()).commit();
+                break;
+            case FRAGMENT_LIGHT:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentLight()).commit();
+                break;
+            case FRAGMENT_BALL:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentBall()).commit();
+                break;
+        }
         menuDrawer.closeMenu();
     }
 

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_name"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorName"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_vendor"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorVendor"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_type"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorType"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_power"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorPower"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_resolution"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorResolution"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_max_range"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorMaxRange"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_min_delay"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorMinDelay"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_version"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorVersion"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trValue1"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_value"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorValue1"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trValue2"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_value"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorValue2"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trValue3"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_value"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorValue3"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trValue4"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_value"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorValue4"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+    </TableRow>
+
+    <TableRow
+        android:id="@+id/trValue5"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <TextView
+            android:text="@string/label_sensor_value"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+        <TextView
+            android:id="@+id/tvSensorValue5"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:layout_weight="1" />
+
+    </TableRow>
+</LinearLayout>

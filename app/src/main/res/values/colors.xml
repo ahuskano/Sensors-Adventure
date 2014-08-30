@@ -4,4 +4,13 @@
 
     <color name="md__defaultBackground">#FF555555</color>
 
+    <color name="winter_sun_blue_darker">#073141</color>
+    <color name="winter_sun_blue_lighter">#009391</color>
+    <color name="winter_sun_green">#33D58C</color>
+    <color name="winter_sun_blue_yelow">#FFC73D</color>
+    <color name="winter_sun_red">#FF2638</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
 </resources>

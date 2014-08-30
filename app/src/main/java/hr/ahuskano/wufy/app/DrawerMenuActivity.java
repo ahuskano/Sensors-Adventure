@@ -18,7 +18,14 @@ import hr.ahuskano.wufy.app.types.Item;
 /**
  * Created by ahuskano on 8/23/2014.
  */
-public abstract class BaseFragment extends FragmentActivity implements MenuAdapter.MenuListener {
+public abstract class DrawerMenuActivity extends FragmentActivity implements MenuAdapter.MenuListener {
+
+    public static final int FRAGMENT_AVAILABLE_SENSORS = 1;
+    public static final int FRAGMENT_COMPAS = 2;
+    public static final int FRAGMENT_SHUFFED_DETECT = 3;
+    public static final int FRAGMENT_SECOND = 6;
+    public static final int FRAGMENT_LIGHT = 4;
+    public static final int FRAGMENT_BALL = 5;
 
     private static final String KEY_ACTIVE_POSITION =
             "hr.ahuskano.wufy.app.drawer.active";
@@ -27,7 +34,6 @@ public abstract class BaseFragment extends FragmentActivity implements MenuAdapt
     protected MenuDrawer menuDrawer;
     protected ListView listView;
     private int menuActivePosition = 0;
-
 
     protected abstract Position getDrawerPosition();
 
@@ -53,12 +59,17 @@ public abstract class BaseFragment extends FragmentActivity implements MenuAdapt
 
         listView.setAdapter(menuAdapter);
         listView.setOnItemClickListener(menuItemClickListener);
+        listView.setBackgroundColor(getResources().getColor(R.color.winter_sun_blue_darker));
         menuDrawer.setMenuView(listView);
 
     }
 
     private List<Object> getItems(List<Object> menu) {
-        menu.add(new Item(getString(R.string.available_sensors)));
+        menu.add(new Item(FRAGMENT_AVAILABLE_SENSORS, getString(R.string.available_sensors_title)));
+        menu.add(new Item(FRAGMENT_COMPAS, getString(R.string.compas_title)));
+        menu.add(new Item(FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title)));
+        menu.add(new Item(FRAGMENT_LIGHT, getString(R.string.light_title)));
+        menu.add(new Item(FRAGMENT_BALL, getString(R.string.ball_title)));
         return menu;
     }
 
