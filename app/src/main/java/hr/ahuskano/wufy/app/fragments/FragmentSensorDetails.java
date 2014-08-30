@@ -82,17 +82,7 @@ public class FragmentSensorDetails extends BaseFragment implements SensorEventLi
     @Override
     public void onSensorChanged(SensorEvent sensorEvent) {
         if (!cleanValues) {
-            switch (sensorEvent.values.length) {
-                case 1:
-                    row2.setVisibility(TextView.GONE);
-                case 2:
-                    row3.setVisibility(TextView.GONE);
-                case 3:
-                    row4.setVisibility(TextView.GONE);
-                case 4:
-                    row5.setVisibility(TextView.GONE);
-            }
-            cleanValues = true;
+            setupView(sensorEvent);
         }
         switch (sensorEvent.values.length) {
             case 5:
@@ -107,6 +97,37 @@ public class FragmentSensorDetails extends BaseFragment implements SensorEventLi
                 value1.setText(String.valueOf(sensorEvent.values[0]));
 
         }
+    }
+
+    private void setupView(SensorEvent sensorEvent) {
+
+        switch (sensorEvent.values.length) {
+            case 1:
+                row2.setVisibility(TextView.GONE);
+            case 2:
+                row3.setVisibility(TextView.GONE);
+            case 3:
+                row4.setVisibility(TextView.GONE);
+            case 4:
+                row5.setVisibility(TextView.GONE);
+        }
+        switch (sensorEvent.values.length) {
+            case 5:
+                ((TextView) getView().findViewById(R.id.tvSensorLabel5)).setText(getString(R.string.fragment_details_value_label));
+            case 4:
+                ((TextView) getView().findViewById(R.id.tvSensorLabel4)).setText(getString(R.string.fragment_details_value_label));
+
+            case 3:
+                ((TextView) getView().findViewById(R.id.tvSensorLabel3)).setText(getString(R.string.fragment_details_value_label));
+
+            case 2:
+                ((TextView) getView().findViewById(R.id.tvSensorLabel2)).setText(getString(R.string.fragment_details_value_label));
+
+            case 1:
+                ((TextView) getView().findViewById(R.id.tvSensorLabel1)).setText(getString(R.string.fragment_details_value_label));
+
+        }
+        cleanValues = true;
     }
 
 

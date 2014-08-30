@@ -18,6 +18,13 @@
     <string name="label_sensor_version">Version: </string>
     <string name="label_sensor_min_delay">Min delay: </string>
     <string name="label_sensor_value">Value: </string>
+    <string name="fragment_title_sensor_list">Sensor List</string>
+
+    //fragment sensor details
+    <string name="fragment_title_sensor_details">Sensor details</string>
+    <string name="fragment_title_sensor_values">Sensor values</string>
+    <string name="fragment_details_value_label">Value: </string>
+
 
     //Fragment titles
     <string name="available_sensors_title">Available sensors</string>

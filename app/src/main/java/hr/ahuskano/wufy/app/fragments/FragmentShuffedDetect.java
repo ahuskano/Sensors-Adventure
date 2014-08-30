@@ -19,6 +19,7 @@ public class FragmentShuffedDetect extends SensorFragment {
     private SensorManager sensorManager;
     private TextView tvMessage;
     private long timestamp;
+    private static final int THRESHOLD = 8;
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
@@ -26,7 +27,7 @@ public class FragmentShuffedDetect extends SensorFragment {
         float accelerationRoot = (values[0] * values[0] + values[1] * values[1] + values[2] * values[2]) /
                 (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
         logIt("root: " + accelerationRoot);
-        if (accelerationRoot >= 2) {
+        if (accelerationRoot >= THRESHOLD) {
             timestamp = sensorEvent.timestamp;
             tvMessage.setText(getString(R.string.shake_it_true));
         }

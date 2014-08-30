@@ -1,9 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
-        <!-- Customize your theme here. -->
+    <style name="wuffyTheme" parent="Theme.Base.AppCompat.Light.DarkActionBar">
+
     </style>
+
     <style name="menuDrawerCategory">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">?android:attr/textColorSecondaryInverse</item>
@@ -32,5 +33,34 @@
         <item name="android:paddingBottom">8dp</item>
         <item name="android:drawablePadding">16dp</item>
         <item name="android:gravity">center_vertical</item>
+    </style>
+
+    //fragment title
+    <style name="fragmentTitle">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/winter_sun_blue_darker</item>
+        <item name="android:textSize">@dimen/fragment_title_text_size</item>
+        <item name="android:padding">@dimen/fragment_title_padding</item>
+    </style>
+
+    //list item
+    <style name="listItemText">
+        <item name="android:textSize">@dimen/list_item_text_size</item>
+        <item name="android:padding">@dimen/list_item_padding</item>
+        <item name="android:textColor">@color/white</item>
+
+    </style>
+
+    //sensor details
+    <style name="detailsLabelItem">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/details_label_text_size</item>
+        <item name="android:padding">@dimen/details_label_padding</item>
+    </style>
+
+    <style name="detailsValueItem">
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">@dimen/details_value_text_size</item>
+        <item name="android:padding">@dimen/details_value_padding</item>
     </style>
 </resources>

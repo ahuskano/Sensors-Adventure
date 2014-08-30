@@ -1,10 +1,9 @@
 package hr.ahuskano.wufy.app.fragments;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
-import android.graphics.drawable.ShapeDrawable;
-import android.graphics.drawable.shapes.ArcShape;
-import android.graphics.drawable.shapes.OvalShape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
@@ -23,26 +22,21 @@ public class FragmentBall extends SensorFragment {
 
     private final static String TAG = FragmentBall.class.getSimpleName();
 
-    private Mario mario;
-    private ShapeDrawable shape = new ShapeDrawable();
-
-    private long lastUpdate;
+    private CanvasView canvasView;
 
     public static int x;
     public static int y;
 
     @Override
     protected void sensorEvent(SensorEvent sensorEvent) {
-        x -= (int) sensorEvent.values[0];
-        y += (int) sensorEvent.values[1];
+        x += (int) sensorEvent.values[0];
+        y -= (int) sensorEvent.values[1];
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        mario = new Mario(getContext());
-        lastUpdate = System.currentTimeMillis();
-
-        return mario;
+        canvasView = new CanvasView(getContext());
+        return canvasView;
     }
 
     @Override
@@ -72,24 +66,22 @@ public class FragmentBall extends SensorFragment {
         return TAG;
     }
 
-    private class Mario extends ImageView {
+    private class CanvasView extends ImageView {
 
         static final int width = 150;
         static final int height = 150;
+        private Bitmap image;
 
-        public Mario(Context context) {
+        public CanvasView(Context context) {
             super(context);
-            this.setBackgroundColor(getResources().getColor(R.color.winter_sun_blue_darker));
-            shape = new ShapeDrawable(new OvalShape());
-            shape.getPaint().setColor(getResources().getColor(R.color.winter_sun_red));
-            shape.setBounds(x, y, x + width, y + height);
+            this.setBackgroundColor(getResources().getColor(R.color.black));
+            image=BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sonic_small);
 
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
-            shape.setBounds(x, y, x + width, y + height);
-            shape.draw(canvas);
+            canvas.drawBitmap(image,x,y,null);
             invalidate();
         }
     }
