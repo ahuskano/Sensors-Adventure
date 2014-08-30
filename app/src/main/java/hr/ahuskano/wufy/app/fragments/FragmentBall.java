@@ -66,6 +66,7 @@ public class FragmentBall extends SensorFragment {
 
     }
 
+
     @Override
     protected String getLogTag() {
         return TAG;
