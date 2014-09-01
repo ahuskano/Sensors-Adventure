@@ -1,5 +1,7 @@
 package hr.ahuskano.wufy.app.types;
 
+import android.content.Context;
+
 import hr.ahuskano.wufy.app.R;
 
 /**
@@ -8,19 +10,19 @@ import hr.ahuskano.wufy.app.R;
 public class Item {
 
     private String title;
-    private int icon;
+    private String icon;
     private int id;
 
-    public Item(int id,String title, int icon) {
+    public Item(Context context, int id,String title, String icon) {
         this.id=id;
         this.title = title;
         this.icon=icon;
     }
 
-    public Item(int id, String title){
+    public Item(Context context, int id, String title){
         this.id=id;
         this.title=title;
-        this.icon= R.drawable.ic_launcher;
+        this.icon=context.getResources().getString(R.string.icone_default);
     }
 
     public int getId() {
@@ -39,11 +41,11 @@ public class Item {
         this.title = title;
     }
 
-    public int getIcon() {
+    public String getIcon() {
         return icon;
     }
 
-    public void setIcon(int icon) {
+    public void setIcon(String icon) {
         this.icon = icon;
     }
 }

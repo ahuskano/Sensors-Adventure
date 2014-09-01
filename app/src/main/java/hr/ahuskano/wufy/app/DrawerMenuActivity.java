@@ -59,17 +59,17 @@ public abstract class DrawerMenuActivity extends FragmentActivity implements Men
 
         listView.setAdapter(menuAdapter);
         listView.setOnItemClickListener(menuItemClickListener);
-        listView.setBackgroundColor(getResources().getColor(R.color.winter_sun_blue_darker));
+        listView.setBackgroundColor(getResources().getColor(R.color.winter_sun_blue_darker_ligh));
         menuDrawer.setMenuView(listView);
 
     }
 
     private List<Object> getItems(List<Object> menu) {
-        menu.add(new Item(FRAGMENT_AVAILABLE_SENSORS, getString(R.string.available_sensors_title)));
-        menu.add(new Item(FRAGMENT_COMPAS, getString(R.string.compas_title)));
-        menu.add(new Item(FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title)));
-        menu.add(new Item(FRAGMENT_LIGHT, getString(R.string.light_title)));
-        menu.add(new Item(FRAGMENT_BALL, getString(R.string.ball_title)));
+        menu.add(new Item(getBaseContext(),FRAGMENT_AVAILABLE_SENSORS, getString(R.string.available_sensors_title),getResources().getString(R.string.icone_sensor_list)));
+        menu.add(new Item(getBaseContext(),FRAGMENT_COMPAS, getString(R.string.compas_title),getResources().getString(R.string.icone_compas)));
+        menu.add(new Item(getBaseContext(),FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title),getResources().getString(R.string.icone_shuffed_detect)));
+        menu.add(new Item(getBaseContext(),FRAGMENT_LIGHT, getString(R.string.light_title),getResources().getString(R.string.icone_light)));
+        menu.add(new Item(getBaseContext(),FRAGMENT_BALL, getString(R.string.ball_title),getResources().getString(R.string.icone_ball)));
         return menu;
     }
 

@@ -4,10 +4,14 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
+import android.graphics.Color;
+import android.graphics.drawable.ShapeDrawable;
+import android.graphics.drawable.shapes.OvalShape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,9 +27,16 @@ public class FragmentBall extends SensorFragment {
     private final static String TAG = FragmentBall.class.getSimpleName();
 
     private CanvasView canvasView;
+    private ShapeDrawable hole;
 
     public static int x;
     public static int y;
+
+    private int maxX;
+    private int maxY;
+
+    private int imageX;
+    private int imageY;
 
     @Override
     protected void sensorEvent(SensorEvent sensorEvent) {
@@ -57,9 +68,12 @@ public class FragmentBall extends SensorFragment {
 
     @Override
     protected void initView(View view) {
+        Display display = getActivity().getWindowManager().getDefaultDisplay();
+        maxX = display.getWidth() - imageX;
+        maxY = display.getHeight() - imageY;
+
 
     }
-
 
     @Override
     protected String getLogTag() {
@@ -68,20 +82,32 @@ public class FragmentBall extends SensorFragment {
 
     private class CanvasView extends ImageView {
 
-        static final int width = 150;
-        static final int height = 150;
+        private int width;
+        private int height;
         private Bitmap image;
 
         public CanvasView(Context context) {
             super(context);
-            this.setBackgroundColor(getResources().getColor(R.color.black));
-            image=BitmapFactory.decodeResource(getContext().getResources(),R.drawable.sonic_small);
-
+            this.setBackgroundColor(getResources().getColor(R.color.black_light));
+            image = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sonic_small);
+            imageX = image.getWidth();
+            imageY = image.getHeight();
+            hole = new ShapeDrawable(new OvalShape());
+            hole.getPaint().setColor(Color.WHITE);
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
-            canvas.drawBitmap(image,x,y,null);
+            width = (x > 0 ? x : 0);
+            width = width > maxX ? maxX : width;
+            height = y > 0 ? y : 0;
+            height = height > maxY ? maxY : height;
+            hole.setBounds(maxX / 2 - 200, maxY / 2 - 200, maxX / 2 + 200, maxY / 2 + 200);
+
+            hole.draw(canvas);
+
+            canvas.drawBitmap(image, width, height, null);
+
             invalidate();
         }
     }

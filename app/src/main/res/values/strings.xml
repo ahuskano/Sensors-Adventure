@@ -33,5 +33,16 @@
     <string name="light_title">Light</string>
     <string name="ball_title">Ball</string>
 
+    //Icons
+    <string name="icone_default">&#xf062;</string>
+    <string name="icone_sensor_list">&#xf0ca;</string>
+    <string name="icone_compas">&#xf14e;</string>
+    <string name="icone_shuffed_detect">&#xf087;</string>
+    <string name="icone_light">&#xf0eb;</string>
+    <string name="icone_ball">&#xf198;</string>
+
+    //Fonts
+    <string name="font_fontawesome">fontawesome.ttf</string>
+
 
 </resources>
