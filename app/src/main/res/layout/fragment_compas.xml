@@ -8,6 +8,6 @@
         android:id="@+id/ivCompas"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/compass"/>
+        android:src="@drawable/compass2"/>
 
 </LinearLayout>

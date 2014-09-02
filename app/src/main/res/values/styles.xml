@@ -8,7 +8,7 @@
 
     <style name="actionBarStyle" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
         <item name="android:background">@color/winter_sun_blue_darker_ligh</item>
-        <item name="android:icon">@drawable/ic_wufy</item>
+        <item name="android:icon">@drawable/icon_alen</item>
     </style>
 
     <style name="menuDrawerCategory">
