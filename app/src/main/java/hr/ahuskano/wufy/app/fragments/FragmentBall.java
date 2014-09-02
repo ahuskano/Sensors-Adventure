@@ -11,11 +11,14 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+
+import java.util.Random;
 
 import hr.ahuskano.wufy.app.R;
 
@@ -38,10 +41,12 @@ public class FragmentBall extends SensorFragment {
     private int imageX;
     private int imageY;
 
+    private long timestamp;
+
     @Override
     protected void sensorEvent(SensorEvent sensorEvent) {
-        x += (int) sensorEvent.values[0];
-        y -= (int) sensorEvent.values[1];
+        x -= (int) sensorEvent.values[0];
+        y += (int) sensorEvent.values[1];
     }
 
     @Override
@@ -84,7 +89,13 @@ public class FragmentBall extends SensorFragment {
 
         private int width;
         private int height;
+        private int widthHamburger;
+        private int heightHamburger;
         private Bitmap image;
+        private Bitmap hamburger;
+        private Random randomX;
+        private Random randomY;
+        private final long delay = 1000;
 
         public CanvasView(Context context) {
             super(context);
@@ -92,8 +103,17 @@ public class FragmentBall extends SensorFragment {
             image = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sonic_small);
             imageX = image.getWidth();
             imageY = image.getHeight();
+            hamburger = BitmapFactory.decodeResource(getContext().getResources(), R.drawable.hamburger_small);
             hole = new ShapeDrawable(new OvalShape());
             hole.getPaint().setColor(Color.WHITE);
+            randomX = new Random();
+            randomX.setSeed(maxX);
+            randomY = new Random();
+            randomY.setSeed(maxY);
+            timestamp = System.currentTimeMillis();
+            widthHamburger = 500;
+            heightHamburger = 400;
+
         }
 
         @Override
@@ -102,13 +122,19 @@ public class FragmentBall extends SensorFragment {
             width = width > maxX ? maxX : width;
             height = y > 0 ? y : 0;
             height = height > maxY ? maxY : height;
-            hole.setBounds(maxX / 2 - 200, maxY / 2 - 200, maxX / 2 + 200, maxY / 2 + 200);
+            if (System.currentTimeMillis() - timestamp >= delay) {
+                timestamp = System.currentTimeMillis();
+                widthHamburger = Math.abs(randomX.nextInt() % maxX);
+                heightHamburger = Math.abs(randomY.nextInt() % maxY);
+            }
+            // hole.setBounds(maxX / 2 - 200, maxY / 2 - 200, maxX / 2 + 200, maxY / 2 + 200);
 
-            hole.draw(canvas);
+            //   hole.draw(canvas);
+            canvas.drawBitmap(hamburger, widthHamburger, heightHamburger, null);
 
             canvas.drawBitmap(image, width, height, null);
-
             invalidate();
+
         }
     }
 }
