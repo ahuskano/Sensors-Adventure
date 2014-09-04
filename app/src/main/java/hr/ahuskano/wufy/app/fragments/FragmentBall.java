@@ -5,13 +5,13 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
+import android.graphics.Rect;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -95,7 +95,7 @@ public class FragmentBall extends SensorFragment {
         private Bitmap hamburger;
         private Random randomX;
         private Random randomY;
-        private final long delay = 1000;
+        private final long delay = 100000;
 
         public CanvasView(Context context) {
             super(context);
@@ -111,30 +111,38 @@ public class FragmentBall extends SensorFragment {
             randomY = new Random();
             randomY.setSeed(maxY);
             timestamp = System.currentTimeMillis();
-            widthHamburger = 500;
-            heightHamburger = 400;
+            widthHamburger = 800;
+            heightHamburger = 800;
 
         }
 
         @Override
         protected void onDraw(Canvas canvas) {
+
             width = (x > 0 ? x : 0);
             width = width > maxX ? maxX : width;
             height = y > 0 ? y : 0;
             height = height > maxY ? maxY : height;
-            if (System.currentTimeMillis() - timestamp >= delay) {
-                timestamp = System.currentTimeMillis();
-                widthHamburger = Math.abs(randomX.nextInt() % maxX);
-                heightHamburger = Math.abs(randomY.nextInt() % maxY);
-            }
-            // hole.setBounds(maxX / 2 - 200, maxY / 2 - 200, maxX / 2 + 200, maxY / 2 + 200);
 
-            //   hole.draw(canvas);
             canvas.drawBitmap(hamburger, widthHamburger, heightHamburger, null);
 
             canvas.drawBitmap(image, width, height, null);
             invalidate();
+            if (detectCollision()) {
+                widthHamburger = Math.abs(randomX.nextInt() % maxX);
+                heightHamburger = Math.abs(randomY.nextInt() % maxY);
+
+            }
 
         }
+
+        private boolean detectCollision() {
+            Rect rect1 = new Rect();
+            rect1.set(width, height, width + image.getWidth(), height + image.getHeight());
+            Rect rect2 = new Rect();
+            rect2.set(widthHamburger, heightHamburger, widthHamburger + hamburger.getWidth(), heightHamburger + hamburger.getHeight());
+            return rect1.intersect(rect2);
+        }
+
     }
 }
