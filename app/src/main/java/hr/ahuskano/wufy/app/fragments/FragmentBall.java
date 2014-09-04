@@ -12,6 +12,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -118,17 +119,14 @@ public class FragmentBall extends SensorFragment {
 
         @Override
         protected void onDraw(Canvas canvas) {
-
             width = (x > 0 ? x : 0);
             width = width > maxX ? maxX : width;
             height = y > 0 ? y : 0;
             height = height > maxY ? maxY : height;
-
             canvas.drawBitmap(hamburger, widthHamburger, heightHamburger, null);
-
             canvas.drawBitmap(image, width, height, null);
             invalidate();
-            if (detectCollision()) {
+            if(detectCollision()){
                 widthHamburger = Math.abs(randomX.nextInt() % maxX);
                 heightHamburger = Math.abs(randomY.nextInt() % maxY);
 
@@ -143,6 +141,7 @@ public class FragmentBall extends SensorFragment {
             rect2.set(widthHamburger, heightHamburger, widthHamburger + hamburger.getWidth(), heightHamburger + hamburger.getHeight());
             return rect1.intersect(rect2);
         }
+
 
     }
 }

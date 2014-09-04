@@ -1,7 +1,5 @@
 package hr.ahuskano.wufy.app;
 
-import android.graphics.Typeface;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +11,7 @@ import net.simonvt.menudrawer.Position;
 import hr.ahuskano.wufy.app.fragments.FragmentAvailableSensors;
 import hr.ahuskano.wufy.app.fragments.FragmentBall;
 import hr.ahuskano.wufy.app.fragments.FragmentCompas;
+import hr.ahuskano.wufy.app.fragments.FragmentGame;
 import hr.ahuskano.wufy.app.fragments.FragmentLight;
 import hr.ahuskano.wufy.app.fragments.FragmentShuffedDetect;
 import hr.ahuskano.wufy.app.types.Item;
@@ -96,6 +95,9 @@ public class MainActivity extends DrawerMenuActivity {
                 break;
             case FRAGMENT_BALL:
                 getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentBall()).commit();
+                break;
+            case FRAGMENT_GAME:
+                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentGame()).commit();
                 break;
         }
         menuDrawer.closeMenu();

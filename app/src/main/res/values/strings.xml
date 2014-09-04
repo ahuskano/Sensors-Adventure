@@ -19,6 +19,7 @@
     <string name="label_sensor_min_delay">Min delay: </string>
     <string name="label_sensor_value">Value: </string>
     <string name="fragment_title_sensor_list">Sensor List</string>
+    <string name="fragment_game_title">Game</string>
 
     //fragment sensor details
     <string name="fragment_title_sensor_details">Sensor details</string>

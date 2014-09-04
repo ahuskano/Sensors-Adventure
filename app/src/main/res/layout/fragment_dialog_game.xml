@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content">
+
+    <TableRow
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Restart"
+            android:textColor="@color/white"
+            android:background="@color/winter_sun_blue_darker_ligh"
+            android:layout_weight="1"
+            android:id="@+id/btOk" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Finish"
+            android:layout_marginLeft="2dp"
+            android:textColor="@color/white"
+            android:background="@color/winter_sun_blue_darker_ligh"
+            android:layout_weight="1"
+            android:id="@+id/btCancel" />
+    </TableRow>
+
+</LinearLayout>
