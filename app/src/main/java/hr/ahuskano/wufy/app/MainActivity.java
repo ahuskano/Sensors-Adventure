@@ -9,7 +9,6 @@ import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
 import hr.ahuskano.wufy.app.fragments.FragmentAvailableSensors;
-import hr.ahuskano.wufy.app.fragments.FragmentBall;
 import hr.ahuskano.wufy.app.fragments.FragmentCompas;
 import hr.ahuskano.wufy.app.fragments.FragmentGame;
 import hr.ahuskano.wufy.app.fragments.FragmentLight;
@@ -92,9 +91,6 @@ public class MainActivity extends DrawerMenuActivity {
                 break;
             case FRAGMENT_LIGHT:
                 getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentLight()).commit();
-                break;
-            case FRAGMENT_BALL:
-                getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentBall()).commit();
                 break;
             case FRAGMENT_GAME:
                 getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentGame()).commit();

@@ -1,12 +1,13 @@
 package hr.ahuskano.wufy.app.fragments;
 
-import android.graphics.Color;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.view.View;
+import android.widget.ImageView;
 
 import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.wufy.app.views.LightView;
 
 /**
  * Created by ahuskano on 8/26/2014.
@@ -14,18 +15,21 @@ import hr.ahuskano.wufy.app.R;
 public class FragmentLight extends SensorFragment {
 
     private static final String TAG = FragmentLight.class.getSimpleName();
-    private View view;
+    private LightView view;
+    private ImageView image;
 
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
-        logIt("VALUE OF LIGHT SENSOR: " + sensorEvent.values[0] / 4);
+        logIt("VALUE OF LIGHT SENSOR: " + sensorEvent.values[0]);
         if ((int) sensorEvent.values[0] > 0)
             if (view != null) {
-                this.view.setBackgroundColor(Color.argb((int) sensorEvent.values[0] / 4, 0, 0, 0));
+                //                this.view.setPosition((int)(image.getLeft()*2.8), (int)(image.getTop()*1.10), (int)(image.getRight()*0.80), (int)(image.getBottom()*0.70));
+                this.view.setPosition((int)(image.getLeft()), (int)(image.getTop()*2.3), (int)(image.getRight()), (int)(image.getBottom()*0.9));
+
+                this.view.setColor((int) sensorEvent.values[0]);
                 this.view.invalidate();
             }
-
     }
 
     @Override
@@ -47,8 +51,10 @@ public class FragmentLight extends SensorFragment {
     @Override
     protected void initView(View view) {
         logIt("initVIew");
-        this.view = (View) view.findViewById(R.id.vLight);
+        this.view = (LightView) view.findViewById(R.id.vLight);
         if (view == null) logIt("view je null");
+        this.image = (ImageView) view.findViewById(R.id.ivLight);
+
     }
 
     @Override

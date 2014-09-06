@@ -23,9 +23,7 @@ public abstract class DrawerMenuActivity extends FragmentActivity implements Men
     public static final int FRAGMENT_AVAILABLE_SENSORS = 1;
     public static final int FRAGMENT_COMPAS = 2;
     public static final int FRAGMENT_SHUFFED_DETECT = 3;
-    public static final int FRAGMENT_SECOND = 6;
     public static final int FRAGMENT_LIGHT = 4;
-    public static final int FRAGMENT_BALL = 6;
     public static final int FRAGMENT_GAME = 5;
 
     private static final String KEY_ACTIVE_POSITION =
@@ -70,7 +68,6 @@ public abstract class DrawerMenuActivity extends FragmentActivity implements Men
         menu.add(new Item(getBaseContext(),FRAGMENT_COMPAS, getString(R.string.compas_title),getResources().getString(R.string.icone_compas)));
         menu.add(new Item(getBaseContext(),FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title),getResources().getString(R.string.icone_shuffed_detect)));
         menu.add(new Item(getBaseContext(),FRAGMENT_LIGHT, getString(R.string.light_title),getResources().getString(R.string.icone_light)));
-        menu.add(new Item(getBaseContext(),FRAGMENT_BALL, getString(R.string.ball_title),getResources().getString(R.string.icone_ball)));
         menu.add(new Item(getBaseContext(),FRAGMENT_GAME,getString(R.string.fragment_game_title)));
         return menu;
     }

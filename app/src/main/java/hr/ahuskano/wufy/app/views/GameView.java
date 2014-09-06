@@ -16,7 +16,6 @@ import android.widget.Toast;
 import java.util.Random;
 
 import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.dialogs.GameFinishedDialog;
 
 /**
  * Created by ahuskano on 9/4/2014.
@@ -64,7 +63,7 @@ public class GameView extends ImageView {
     }
 
     private void init(Context context) {
-        this.context=context;
+        this.context = context;
         this.setBackgroundColor(getResources().getColor(R.color.black_light));
         setDialog();
 
@@ -83,7 +82,7 @@ public class GameView extends ImageView {
     }
 
     public void start() {
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long milisec) {
                 time.setText("Time: " + milisec / 1000);
@@ -93,23 +92,26 @@ public class GameView extends ImageView {
             public void onFinish() {
                 time.setText("Finished");
                 stoped = true;
-                if(dialog!=null && !dialog.isShowing())
-                    dialog.show();
+                if (dialog != null && !dialog.isShowing())
+                    dialog.setTitle("You got " + coins + " points!!! Do you want to play again?");
+                coins = 0;
+                dialog.show();
 
             }
         }.start();
+        coins = 0;
+        points.setText("Points: "+coins);
+
     }
 
     private void setDialog() {
-        dialog=new AlertDialog.Builder(context)
-                .setTitle("You got "+coins+" points!!! Do you want to play again?")
+        dialog = new AlertDialog.Builder(context)
                 .setPositiveButton("Restart",
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialo, int whichButton) {
                                 dialog.dismiss();
-                                stoped=false;
+                                stoped = false;
                                 start();
-
                             }
                         }
                 )
@@ -117,7 +119,6 @@ public class GameView extends ImageView {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialo, int whichButton) {
                                 dialog.dismiss();
-
                             }
                         }
                 )
@@ -127,13 +128,15 @@ public class GameView extends ImageView {
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        if (stoped)
-            return;
         if (timestamp == 0) {
             timestamp = System.currentTimeMillis() / 1000;
         }
-        canvas.drawBitmap(boss, widthBoss, heightBoss, null);
-        canvas.drawBitmap(food, widthFood, heightFood, null);
+        if (!stoped) {
+
+            canvas.drawBitmap(boss, widthBoss, heightBoss, null);
+            canvas.drawBitmap(food, widthFood, heightFood, null);
+
+        }
         refresh();
         invalidate();
     }
@@ -146,7 +149,8 @@ public class GameView extends ImageView {
         if (detectCollision()) {
             widthFood = Math.abs(randomX.nextInt() % maxX);
             heightFood = Math.abs(randomY.nextInt() % maxY);
-            updateCoins();
+            if (!stoped)
+                updateCoins();
         }
 
     }
