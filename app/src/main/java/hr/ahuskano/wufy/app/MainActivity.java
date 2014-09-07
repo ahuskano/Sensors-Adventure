@@ -8,22 +8,22 @@ import android.widget.FrameLayout;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
-import hr.ahuskano.wufy.app.fragments.FragmentAvailableSensors;
-import hr.ahuskano.wufy.app.fragments.FragmentCompas;
-import hr.ahuskano.wufy.app.fragments.FragmentGame;
-import hr.ahuskano.wufy.app.fragments.FragmentLight;
-import hr.ahuskano.wufy.app.fragments.FragmentShuffedDetect;
 import hr.ahuskano.wufy.app.types.Item;
 import hr.ahuskano.wufy.app.utils.Singleton;
+import hr.ahuskano.wufy.app.utils.Utils;
 
 
 public class MainActivity extends DrawerMenuActivity {
     private FrameLayout container;
     private final String TAG = MainActivity.class.getSimpleName();
+    private int available_fragment = 1;
+    private final String KEY_BUNDLE = TAG + ".bundle";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (savedInstanceState != null)
+            available_fragment = savedInstanceState.getInt(KEY_BUNDLE);
         initDrawer();
         initView();
 
@@ -37,8 +37,14 @@ public class MainActivity extends DrawerMenuActivity {
 
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_BUNDLE, available_fragment);
+    }
+
     private void initFirstFragment() {
-        getSupportFragmentManager().beginTransaction().add(container.getId(), new FragmentAvailableSensors()).commit();
+        getSupportFragmentManager().beginTransaction().add(container.getId(), Utils.provideFragment(available_fragment)).commit();
 
     }
 
@@ -79,6 +85,9 @@ public class MainActivity extends DrawerMenuActivity {
 
     @Override
     protected void onMenuItemClicked(int position, Item item) {
+        getSupportFragmentManager().beginTransaction().replace(container.getId(), Utils.provideFragment(item.getId())).commit();
+        available_fragment = item.getId();
+        /*
         switch (item.getId()) {
             case FRAGMENT_AVAILABLE_SENSORS:
                 getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentAvailableSensors()).commit();
@@ -96,6 +105,7 @@ public class MainActivity extends DrawerMenuActivity {
                 getSupportFragmentManager().beginTransaction().replace(container.getId(), new FragmentGame()).commit();
                 break;
         }
+        */
         menuDrawer.closeMenu();
     }
 

@@ -25,7 +25,7 @@ public class FragmentLight extends SensorFragment {
         if ((int) sensorEvent.values[0] > 0)
             if (view != null) {
                 //                this.view.setPosition((int)(image.getLeft()*2.8), (int)(image.getTop()*1.10), (int)(image.getRight()*0.80), (int)(image.getBottom()*0.70));
-                this.view.setPosition((int)(image.getLeft()), (int)(image.getTop()*2.3), (int)(image.getRight()), (int)(image.getBottom()*0.9));
+                this.view.setPosition((int)(image.getLeft()*2.2), (int)(image.getTop()*2.3), (int)(image.getRight()*0.85), (int)(image.getBottom()*0.65));
 
                 this.view.setColor((int) sensorEvent.values[0]);
                 this.view.invalidate();

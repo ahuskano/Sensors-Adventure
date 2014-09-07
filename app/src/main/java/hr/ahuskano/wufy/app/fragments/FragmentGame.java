@@ -63,7 +63,7 @@ public class FragmentGame extends SensorFragment {
     private void setupGame() {
         view.setFm(getChildFragmentManager());
         view.setBoss(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.cale_medo_small));
-        view.setFood(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.hamburger_small));
+        view.setFood(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.cale_kosnica_medium));
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         view.setMaxX(display.getWidth());
         view.setMaxY(display.getHeight());

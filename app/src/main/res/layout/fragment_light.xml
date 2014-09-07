@@ -13,7 +13,7 @@
         android:layout_width="500dp"
         android:layout_height="700dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/circle"/>
+        android:src="@drawable/cale_zarulja_darker_2"/>
 
     <hr.ahuskano.wufy.app.views.LightView
         android:layout_width="match_parent"

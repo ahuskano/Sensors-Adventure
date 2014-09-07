@@ -36,7 +36,7 @@ public class LightView extends View {
     }
 
     public void setColor(int color) {
-        shape.getPaint().setARGB(color, 250,250,0);
+        shape.getPaint().setARGB(color, 255,252,198);
         Log.d("test", "setCOlor "+ color);
 
     }
