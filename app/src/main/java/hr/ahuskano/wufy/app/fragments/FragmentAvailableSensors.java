@@ -2,6 +2,7 @@ package hr.ahuskano.wufy.app.fragments;
 
 import android.content.Intent;
 import android.hardware.Sensor;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -27,7 +28,7 @@ public class FragmentAvailableSensors extends BaseFragment implements AdapterVie
     }
 
     @Override
-    protected void initView(View view) {
+    protected void initView(View view, Bundle bundle) {
         listView = (ListView) view.findViewById(R.id.lvSensors);
         sensorListAdapter = new SensorListAdapter(getContext(), Utils.getAvailableSensors(getContext()));
         listView.setAdapter(sensorListAdapter);

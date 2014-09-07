@@ -3,6 +3,7 @@ package hr.ahuskano.wufy.app.fragments;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 
@@ -49,7 +50,7 @@ public class FragmentLight extends SensorFragment {
     }
 
     @Override
-    protected void initView(View view) {
+    protected void initView(View view, Bundle bundle) {
         logIt("initVIew");
         this.view = (LightView) view.findViewById(R.id.vLight);
         if (view == null) logIt("view je null");

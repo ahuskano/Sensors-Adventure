@@ -5,6 +5,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
@@ -31,7 +32,7 @@ public class FragmentSensorDetails extends BaseFragment implements SensorEventLi
     }
 
     @Override
-    protected void initView(View view) {
+    protected void initView(View view, Bundle bundle) {
         fillSensorData(view);
         value1 = (TextView) view.findViewById(R.id.tvSensorValue1);
         value2 = (TextView) view.findViewById(R.id.tvSensorValue2);

@@ -4,13 +4,12 @@ import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
-import android.util.Log;
+import android.os.Bundle;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
 import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.utils.SharedPreferenceManagment;
 import hr.ahuskano.wufy.app.views.GameView;
 
 /**
@@ -19,6 +18,8 @@ import hr.ahuskano.wufy.app.views.GameView;
 public class FragmentGame extends SensorFragment {
 
     private GameView view;
+    private final String TAG = FragmentGame.class.getSimpleName();
+    private final String KEY_COINS = TAG + ".coins";
 
     @Override
     protected void sensorEvent(SensorEvent sensorEvent) {
@@ -42,8 +43,11 @@ public class FragmentGame extends SensorFragment {
     }
 
     @Override
-    protected void initView(View view) {
+    protected void initView(View view, Bundle bundle) {
         this.view = (GameView) view.findViewById(R.id.view);
+        if (bundle != null)
+            this.view.setCoins(bundle.getInt(KEY_COINS));
+
 
     }
 
@@ -52,6 +56,13 @@ public class FragmentGame extends SensorFragment {
         super.onResume();
         setupGame();
         view.setActive(true);
+    }
+
+    @Override
+    public void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putInt(KEY_COINS, view.getCoins());
+
     }
 
     @Override

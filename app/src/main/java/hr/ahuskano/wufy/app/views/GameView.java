@@ -50,6 +50,8 @@ public class GameView extends ImageView {
     private boolean stoped = false;
     private boolean active = false;
 
+    private CountDownTimer timer;
+
     public GameView(Context context) {
         super(context);
         init(context);
@@ -85,31 +87,33 @@ public class GameView extends ImageView {
     }
 
     public void start() {
-        new CountDownTimer(30000, 1000) {
-            @Override
-            public void onTick(long milisec) {
-                time.setText(context.getString(R.string.time_label) + milisec / 1000);
-            }
-
-            @Override
-            public void onFinish() {
-                if (active) {
-                    time.setText(context.getString(R.string.finished_label));
-                    stoped = true;
-                    if (SharedPreferenceManagment.getScore(getContext()) < coins) {
-                        SharedPreferenceManagment.saveScore(getContext(), coins);
-                        highScore.setText(context.getString(R.string.high_score_label) + coins);
-                    }
-
-                    if (dialog != null && !dialog.isShowing())
-                        dialog.setTitle("You got " + coins + " points!!! Do you want to play again?");
-                    coins = 0;
-                    dialog.show();
+        if (timer == null || stoped) {
+            timer = new CountDownTimer(30000, 1000) {
+                @Override
+                public void onTick(long milisec) {
+                    time.setText(context.getString(R.string.time_label) + milisec / 1000);
                 }
-            }
-        }.start();
-        coins = 0;
-        points.setText(context.getString(R.string.points_label) + coins);
+
+                @Override
+                public void onFinish() {
+                    if (active) {
+                        time.setText(context.getString(R.string.finished_label));
+                        stoped = true;
+                        if (SharedPreferenceManagment.getScore(getContext()) < coins) {
+                            SharedPreferenceManagment.saveScore(getContext(), coins);
+                            highScore.setText(context.getString(R.string.high_score_label) + coins);
+                        }
+
+                        if (dialog != null && !dialog.isShowing())
+                            dialog.setTitle("You got " + coins + " points!!! Do you want to play again?");
+                        coins = 0;
+                        dialog.show();
+                    }
+                }
+            }.start();
+            coins = 0;
+            points.setText(context.getString(R.string.points_label) + coins);
+        }
 
     }
 
@@ -119,8 +123,8 @@ public class GameView extends ImageView {
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialo, int whichButton) {
                                 dialog.dismiss();
-                                stoped = false;
                                 start();
+                                stoped = false;
                             }
                         }
                 )
@@ -175,6 +179,14 @@ public class GameView extends ImageView {
         Rect rect2 = new Rect();
         rect2.set(widthFood, heightFood, widthFood + food.getWidth(), heightFood + food.getHeight());
         return rect1.intersect(rect2);
+    }
+
+    public int getCoins() {
+        return coins;
+    }
+
+    public void setCoins(int coins) {
+        this.coins = coins;
     }
 
     public void setHighScore(TextView highScore) {

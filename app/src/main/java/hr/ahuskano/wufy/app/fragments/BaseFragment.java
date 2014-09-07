@@ -18,13 +18,13 @@ public abstract class BaseFragment extends Fragment {
 
     protected abstract int getResourceLayout();
 
-    protected abstract void initView(View view);
+    protected abstract void initView(View view, Bundle bundle);
 
     protected abstract String getLogTag();
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        initView(view);
+        initView(view, savedInstanceState);
         super.onViewCreated(view, savedInstanceState);
     }
 

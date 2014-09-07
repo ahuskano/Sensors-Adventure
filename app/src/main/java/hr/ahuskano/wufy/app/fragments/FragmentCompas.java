@@ -3,6 +3,7 @@ package hr.ahuskano.wufy.app.fragments;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
+import android.os.Bundle;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.RotateAnimation;
@@ -28,7 +29,7 @@ public class FragmentCompas extends SensorFragment {
     }
 
     @Override
-    protected void initView(View view) {
+    protected void initView(View view, Bundle bundle) {
         compas_image = (ImageView) view.findViewById(R.id.ivCompas);
     }
 
