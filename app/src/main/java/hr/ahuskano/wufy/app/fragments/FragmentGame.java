@@ -1,6 +1,5 @@
 package hr.ahuskano.wufy.app.fragments;
 
-import android.app.DialogFragment;
 import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,8 +7,6 @@ import android.hardware.SensorManager;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 import hr.ahuskano.wufy.app.R;
 import hr.ahuskano.wufy.app.views.GameView;
@@ -45,6 +42,12 @@ public class FragmentGame extends SensorFragment {
     @Override
     protected void initView(View view) {
         this.view = (GameView) view.findViewById(R.id.view);
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
         setupGame();
     }
 

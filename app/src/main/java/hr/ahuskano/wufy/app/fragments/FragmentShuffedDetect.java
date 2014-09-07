@@ -19,7 +19,7 @@ public class FragmentShuffedDetect extends SensorFragment {
     private SensorManager sensorManager;
     private TextView tvMessage;
     private long timestamp;
-    private static final int THRESHOLD = 8;
+    private static final int THRESHOLD = 6;
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {

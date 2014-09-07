@@ -6,6 +6,15 @@
     android:layout_height="match_parent"
     style="@style/fragmentStyle">
 
+    <ImageView
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/shakeit">
+
+    </ImageView>
+
     <TextView
         android:id="@+id/tvShakeIt"
         android:text="@string/shake_it_false"
