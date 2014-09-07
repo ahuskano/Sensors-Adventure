@@ -16,6 +16,7 @@ import android.widget.Toast;
 import java.util.Random;
 
 import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.wufy.app.utils.SharedPreferenceManagment;
 
 /**
  * Created by ahuskano on 9/4/2014.
@@ -25,6 +26,7 @@ public class GameView extends ImageView {
     private Context context;
     private TextView time;
     private TextView points;
+    private TextView highScore;
     private long timestamp;
     private FragmentManager fm;
     private AlertDialog dialog;
@@ -46,6 +48,7 @@ public class GameView extends ImageView {
     private int maxY;
 
     private boolean stoped = false;
+    private boolean active = false;
 
     public GameView(Context context) {
         super(context);
@@ -90,17 +93,23 @@ public class GameView extends ImageView {
 
             @Override
             public void onFinish() {
-                time.setText("Finished");
-                stoped = true;
-                if (dialog != null && !dialog.isShowing())
-                    dialog.setTitle("You got " + coins + " points!!! Do you want to play again?");
-                coins = 0;
-                dialog.show();
+                if (active) {
+                    time.setText("Finished");
+                    stoped = true;
+                    if (SharedPreferenceManagment.getScore(getContext()) < coins) {
+                        SharedPreferenceManagment.saveScore(getContext(), coins);
+                        highScore.setText("High score: " + coins);
+                    }
 
+                    if (dialog != null && !dialog.isShowing())
+                        dialog.setTitle("You got " + coins + " points!!! Do you want to play again?");
+                    coins = 0;
+                    dialog.show();
+                }
             }
         }.start();
         coins = 0;
-        points.setText("Points: "+coins);
+        points.setText("Points: " + coins);
 
     }
 
@@ -166,6 +175,15 @@ public class GameView extends ImageView {
         Rect rect2 = new Rect();
         rect2.set(widthFood, heightFood, widthFood + food.getWidth(), heightFood + food.getHeight());
         return rect1.intersect(rect2);
+    }
+
+    public void setHighScore(TextView highScore) {
+        this.highScore = highScore;
+        this.highScore.setText("High score: " + SharedPreferenceManagment.getScore(getContext()));
+    }
+
+    public void setActive(boolean active) {
+        this.active = active;
     }
 
     public void setBoss(Bitmap boss) {

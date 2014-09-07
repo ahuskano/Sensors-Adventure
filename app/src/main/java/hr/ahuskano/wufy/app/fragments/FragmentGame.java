@@ -4,11 +4,13 @@ import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
+import android.util.Log;
 import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
 import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.wufy.app.utils.SharedPreferenceManagment;
 import hr.ahuskano.wufy.app.views.GameView;
 
 /**
@@ -49,11 +51,18 @@ public class FragmentGame extends SensorFragment {
     public void onResume() {
         super.onResume();
         setupGame();
+        view.setActive(true);
+    }
+
+    @Override
+    public void onPause() {
+        super.onPause();
+        view.setActive(false);
     }
 
     private void setupGame() {
         view.setFm(getChildFragmentManager());
-        view.setBoss(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.sonic_small));
+        view.setBoss(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.cale_medo_small));
         view.setFood(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.hamburger_small));
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         view.setMaxX(display.getWidth());
@@ -62,9 +71,9 @@ public class FragmentGame extends SensorFragment {
         view.setWidthFood(500);
         view.setHeightFood(800);
         view.setPoints((TextView) getView().findViewById(R.id.tvCoins));
+        view.setHighScore((TextView) getView().findViewById(R.id.tvHighScore));
         view.setTime((TextView) getView().findViewById(R.id.tvTime));
         view.start();
-        ;
     }
 
     @Override
