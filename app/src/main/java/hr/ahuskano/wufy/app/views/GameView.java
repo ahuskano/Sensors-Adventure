@@ -81,24 +81,24 @@ public class GameView extends ImageView {
             randomY.setSeed(maxY);
             return;
         }
-        Toast.makeText(context, "Max X and Max Y not seted", Toast.LENGTH_SHORT).show();
+        Toast.makeText(context, context.getString(R.string.max_min_error), Toast.LENGTH_SHORT).show();
     }
 
     public void start() {
         new CountDownTimer(30000, 1000) {
             @Override
             public void onTick(long milisec) {
-                time.setText("Time: " + milisec / 1000);
+                time.setText(context.getString(R.string.time_label) + milisec / 1000);
             }
 
             @Override
             public void onFinish() {
                 if (active) {
-                    time.setText("Finished");
+                    time.setText(context.getString(R.string.finished_label));
                     stoped = true;
                     if (SharedPreferenceManagment.getScore(getContext()) < coins) {
                         SharedPreferenceManagment.saveScore(getContext(), coins);
-                        highScore.setText("High score: " + coins);
+                        highScore.setText(context.getString(R.string.high_score_label) + coins);
                     }
 
                     if (dialog != null && !dialog.isShowing())
@@ -109,13 +109,13 @@ public class GameView extends ImageView {
             }
         }.start();
         coins = 0;
-        points.setText("Points: " + coins);
+        points.setText(context.getString(R.string.points_label) + coins);
 
     }
 
     private void setDialog() {
         dialog = new AlertDialog.Builder(context)
-                .setPositiveButton("Restart",
+                .setPositiveButton(context.getString(R.string.restart_label),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialo, int whichButton) {
                                 dialog.dismiss();
@@ -124,7 +124,7 @@ public class GameView extends ImageView {
                             }
                         }
                 )
-                .setNegativeButton("Finish",
+                .setNegativeButton(context.getString(R.string.finish_label),
                         new DialogInterface.OnClickListener() {
                             public void onClick(DialogInterface dialo, int whichButton) {
                                 dialog.dismiss();
@@ -166,7 +166,7 @@ public class GameView extends ImageView {
 
     private void updateCoins() {
         coins += 10;
-        points.setText("Points: " + coins);
+        points.setText(context.getString(R.string.points_label) + coins);
     }
 
     private boolean detectCollision() {
@@ -179,7 +179,7 @@ public class GameView extends ImageView {
 
     public void setHighScore(TextView highScore) {
         this.highScore = highScore;
-        this.highScore.setText("High score: " + SharedPreferenceManagment.getScore(getContext()));
+        this.highScore.setText(context.getString(R.string.high_score_label) + SharedPreferenceManagment.getScore(getContext()));
     }
 
     public void setActive(boolean active) {

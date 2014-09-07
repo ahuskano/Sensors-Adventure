@@ -46,6 +46,12 @@
     <string name="font_fontawesome">fontawesome.ttf</string>
 
     //GameView
-
+    <string name="max_min_error">Max X and Max Y not seted</string>
+    <string name="time_label">Time: </string>
+    <string name="finished_label">Finished</string>
+    <string name="high_score_label">High score: </string>
+    <string name="points_label">Points: </string>
+    <string name="restart_label">Restart</string>
+    <string name="finish_label">Finish</string>
 
 </resources>
