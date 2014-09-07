@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Wufy</string>
+    <string name="app_name">Sensors adventure</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
 
@@ -26,6 +26,8 @@
     <string name="fragment_title_sensor_values">Sensor values</string>
     <string name="fragment_details_value_label">Value: </string>
 
+    //Fragment light
+    <string name="light_label">Light: </string>
 
     //Fragment titles
     <string name="available_sensors_title">Available sensors</string>

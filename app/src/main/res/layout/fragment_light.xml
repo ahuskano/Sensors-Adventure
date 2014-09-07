@@ -6,18 +6,26 @@
     android:layout_height="match_parent"
     style="@style/fragmentStyle">
 
-
+    <TextView
+        android:id="@+id/tvLight"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:textSize="29dp"
+        android:textColor="@color/white"
+        android:text="@string/light_label"
+        android:layout_height="wrap_content" />
 
     <ImageView
         android:id="@+id/ivLight"
         android:layout_width="500dp"
         android:layout_height="700dp"
         android:layout_centerInParent="true"
-        android:src="@drawable/cale_zarulja_darker_2"/>
+        android:src="@drawable/cale_zarulja_darker_2" />
 
     <hr.ahuskano.wufy.app.views.LightView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_centerInParent="true"
-        android:id="@+id/vLight"/>
+        android:id="@+id/vLight" />
 </RelativeLayout>
