@@ -20,18 +20,18 @@ public class FragmentShuffedDetect extends SensorFragment {
     private SensorManager sensorManager;
     private TextView tvMessage;
     private long timestamp;
-    private static final int THRESHOLD = 6;
+    private static final int THRESHOLD = 2;
+    private float accelerationRootLast = 0;
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
-        float[] values = sensorEvent.values.clone();
-        float accelerationRoot = (values[0] * values[0] + values[1] * values[1] + values[2] * values[2]) /
-                (SensorManager.GRAVITY_EARTH * SensorManager.GRAVITY_EARTH);
-        logIt("root: " + accelerationRoot);
-        if (accelerationRoot >= THRESHOLD) {
+        float[] accelerations = sensorEvent.values.clone();
+        float accelerationRoot = (Math.abs(accelerations[0]) + Math.abs(accelerations[1]) + Math.abs(accelerations[2])) / Math.abs(SensorManager.GRAVITY_EARTH);
+        if (Math.abs(accelerationRoot - accelerationRootLast) >= THRESHOLD) {
             timestamp = sensorEvent.timestamp;
             tvMessage.setText(getString(R.string.shake_it_true));
         }
+        accelerationRootLast = accelerationRoot;
     }
 
     @Override

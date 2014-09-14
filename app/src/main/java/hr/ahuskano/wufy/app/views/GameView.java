@@ -35,8 +35,8 @@ public class GameView extends ImageView {
     private Bitmap boss;
     private Bitmap food;
 
-    private int heightBoss;
-    private int widthBoss;
+    private int yBoss;
+    private int xBoss;
 
     private int heightFood;
     private int widthFood;
@@ -146,7 +146,7 @@ public class GameView extends ImageView {
         }
         if (!stoped) {
 
-            canvas.drawBitmap(boss, widthBoss, heightBoss, null);
+            canvas.drawBitmap(boss, xBoss, yBoss, null);
             canvas.drawBitmap(food, widthFood, heightFood, null);
 
         }
@@ -155,10 +155,10 @@ public class GameView extends ImageView {
     }
 
     private void refresh() {
-        widthBoss = (widthBoss > 0 ? widthBoss : 0);
-        widthBoss = widthBoss > maxX ? maxX : widthBoss;
-        heightBoss = heightBoss > 0 ? heightBoss : 0;
-        heightBoss = heightBoss > maxY ? maxY : heightBoss;
+        xBoss = (xBoss > 0 ? xBoss : 0);
+        xBoss = xBoss > maxX ? maxX : xBoss;
+        yBoss = yBoss > 0 ? yBoss : 0;
+        yBoss = yBoss > maxY ? maxY : yBoss;
         if (detectCollision()) {
             widthFood = Math.abs(randomX.nextInt() % maxX);
             heightFood = Math.abs(randomY.nextInt() % maxY);
@@ -175,7 +175,7 @@ public class GameView extends ImageView {
 
     private boolean detectCollision() {
         Rect rect1 = new Rect();
-        rect1.set(widthBoss, heightBoss, widthBoss + boss.getWidth(), heightBoss + boss.getHeight());
+        rect1.set(xBoss, yBoss, xBoss + boss.getWidth(), yBoss + boss.getHeight());
         Rect rect2 = new Rect();
         rect2.set(widthFood, heightFood, widthFood + food.getWidth(), heightFood + food.getHeight());
         return rect1.intersect(rect2);
@@ -206,12 +206,12 @@ public class GameView extends ImageView {
         this.food = food;
     }
 
-    public void setHeightBoss(int heightBoss) {
-        this.heightBoss += heightBoss;
+    public void setyBoss(int yBoss) {
+        this.yBoss += yBoss;
     }
 
-    public void setWidthBoss(int widthBoss) {
-        this.widthBoss -= widthBoss;
+    public void setxBoss(int xBoss) {
+        this.xBoss -= xBoss;
     }
 
     public void setHeightFood(int heightFood) {

@@ -24,7 +24,6 @@ public class FragmentLight extends SensorFragment {
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
-        logIt("VALUE OF LIGHT SENSOR: " + sensorEvent.values[0]);
         if ((int) sensorEvent.values[0] > 0)
             if (view != null) {
                 this.view.setPosition((int) (image.getLeft() * 2.2), (int) (image.getTop() * 2.3), (int) (image.getRight() * 0.85), (int) (image.getBottom() * 0.65));
@@ -52,9 +51,8 @@ public class FragmentLight extends SensorFragment {
 
     @Override
     protected void initView(View view, Bundle bundle) {
-        this.view = (LightView) view.findViewById(R.id.vLight);
-        if (view == null) logIt("view je null");
         this.image = (ImageView) view.findViewById(R.id.ivLight);
+        this.view = (LightView) view.findViewById(R.id.vLight);
         this.label = (TextView) view.findViewById(R.id.tvLight);
 
     }

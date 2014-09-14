@@ -1,5 +1,6 @@
 package hr.ahuskano.wufy.app;
 
+import android.hardware.Sensor;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
@@ -14,6 +15,7 @@ import java.util.List;
 
 import hr.ahuskano.wufy.app.adapters.MenuAdapter;
 import hr.ahuskano.wufy.app.types.Item;
+import hr.ahuskano.wufy.app.utils.Utils;
 
 /**
  * Created by ahuskano on 8/23/2014.
@@ -64,11 +66,15 @@ public abstract class DrawerMenuActivity extends FragmentActivity implements Men
     }
 
     private List<Object> getItems(List<Object> menu) {
-        menu.add(new Item(getBaseContext(),FRAGMENT_AVAILABLE_SENSORS, getString(R.string.available_sensors_title),getResources().getString(R.string.icone_sensor_list)));
-        menu.add(new Item(getBaseContext(),FRAGMENT_COMPAS, getString(R.string.compas_title),getResources().getString(R.string.icone_compas)));
-        menu.add(new Item(getBaseContext(),FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title),getResources().getString(R.string.icone_shuffed_detect)));
-        menu.add(new Item(getBaseContext(),FRAGMENT_LIGHT, getString(R.string.light_title),getResources().getString(R.string.icone_light)));
-        menu.add(new Item(getBaseContext(),FRAGMENT_GAME,getString(R.string.fragment_game_title)));
+        menu.add(new Item(getBaseContext(), FRAGMENT_AVAILABLE_SENSORS, getString(R.string.available_sensors_title), getResources().getString(R.string.icone_sensor_list)));
+        if (Utils.sensorExist(getBaseContext(), Sensor.TYPE_ORIENTATION))
+            menu.add(new Item(getBaseContext(), FRAGMENT_COMPAS, getString(R.string.compas_title), getResources().getString(R.string.icone_compas)));
+        if (Utils.sensorExist(getBaseContext(), Sensor.TYPE_ACCELEROMETER))
+            menu.add(new Item(getBaseContext(), FRAGMENT_SHUFFED_DETECT, getString(R.string.shuffed_detect_title), getResources().getString(R.string.icone_shuffed_detect)));
+        if (Utils.sensorExist(getBaseContext(), Sensor.TYPE_LIGHT))
+            menu.add(new Item(getBaseContext(), FRAGMENT_LIGHT, getString(R.string.light_title), getResources().getString(R.string.icone_light)));
+        if (Utils.sensorExist(getBaseContext(), Sensor.TYPE_ACCELEROMETER))
+            menu.add(new Item(getBaseContext(), FRAGMENT_GAME, getString(R.string.fragment_game_title)));
         return menu;
     }
 

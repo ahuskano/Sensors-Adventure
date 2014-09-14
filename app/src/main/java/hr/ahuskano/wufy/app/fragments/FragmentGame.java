@@ -23,8 +23,8 @@ public class FragmentGame extends SensorFragment {
 
     @Override
     protected void sensorEvent(SensorEvent sensorEvent) {
-        view.setWidthBoss((int) sensorEvent.values[0]);
-        view.setHeightBoss((int) sensorEvent.values[1]);
+        view.setxBoss((int) sensorEvent.values[0]);
+        view.setyBoss((int) sensorEvent.values[1]);
     }
 
     @Override

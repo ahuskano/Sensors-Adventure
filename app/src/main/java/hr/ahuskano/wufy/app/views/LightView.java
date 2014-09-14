@@ -39,7 +39,6 @@ public class LightView extends View {
         color = color > 10000 ? 10000 : color;
         int transparent = color / 40;
         shape.getPaint().setARGB(transparent, 255, 252, 198);
-        Log.d("test", "setCOlor " + color);
 
     }
 

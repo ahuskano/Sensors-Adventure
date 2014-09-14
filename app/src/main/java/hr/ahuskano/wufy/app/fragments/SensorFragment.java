@@ -57,4 +57,14 @@ public abstract class SensorFragment extends BaseFragment implements SensorEvent
     public void onAccuracyChanged(Sensor sensor, int i) {
 
     }
+
+    @Override
+    public void onStart() {
+        super.onStart();
+    }
+
+    @Override
+    public void onStop() {
+        super.onStop();
+    }
 }

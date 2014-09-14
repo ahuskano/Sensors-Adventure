@@ -19,7 +19,7 @@ public class FragmentCompas extends SensorFragment {
     private SensorManager sensorManager;
     private ImageView compas_image;
     private Sensor sensor;
-    private float currentDegree = 0f;
+    private float lastDegree = 0f;
 
     private final String TAG = FragmentCompas.class.getSimpleName();
 
@@ -41,17 +41,16 @@ public class FragmentCompas extends SensorFragment {
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
-        float degree = Math.round(sensorEvent.values[0]);
-        RotateAnimation animation = new RotateAnimation(currentDegree,
+        float degree = sensorEvent.values[0];
+        RotateAnimation animation = new RotateAnimation(lastDegree,
                 -degree,
                 Animation.RELATIVE_TO_SELF,
                 0.5f,
                 Animation.RELATIVE_TO_SELF,
                 0.5f);
-        animation.setDuration(220);
-        animation.setFillAfter(true);
+        animation.setDuration(100);
         compas_image.startAnimation(animation);
-        currentDegree = -degree;
+        lastDegree = -degree;
     }
 
     @Override

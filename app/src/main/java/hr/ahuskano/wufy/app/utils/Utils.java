@@ -25,6 +25,11 @@ public class Utils {
         return ((SensorManager) context.getSystemService(Context.SENSOR_SERVICE)).getSensorList(Sensor.TYPE_ALL);
     }
 
+    public static boolean sensorExist(Context context, int type) {
+
+        return ((SensorManager) context.getSystemService(Context.SENSOR_SERVICE)).getSensorList(type).size() > 0;
+    }
+
     public static void setFont(TextView textView, String fontName) {
         Typeface font = Typeface.createFromAsset(textView.getContext().getAssets(), "fonts/" + fontName);
         textView.setTypeface(font);

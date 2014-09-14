@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="ga_trackingId">UA-47468713-3</string>
+    <bool name="ga_autoActivityTracking">true</bool>
+    <bool name="ga_reportUncaughtExceptions">true</bool>
+    <integer name="ga_sessionTimeout">300</integer>
+    <!-- Enable automatic Activity measurement -->
+
+    <!-- The screen names that will appear in reports -->
+    <screenName name="com.google.android.gms.analytics.samples.mobileplayground.ScreenviewFragment">
+        AnalyticsSampleApp ScreenView
+    </screenName>
+    <screenName name="com.google.android.gms.analytics.samples.mobileplayground.EcommerceFragment">
+        AnalyticsSampleApp EcommerceView
+    </screenName>
+</resources>
