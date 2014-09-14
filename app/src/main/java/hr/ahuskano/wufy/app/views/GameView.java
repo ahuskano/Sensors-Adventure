@@ -38,8 +38,8 @@ public class GameView extends ImageView {
     private int yBoss;
     private int xBoss;
 
-    private int heightFood;
-    private int widthFood;
+    private int heightFood=100;
+    private int widthFood=100;
 
     private Random randomX;
     private Random randomY;

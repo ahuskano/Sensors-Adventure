@@ -77,10 +77,10 @@ public class FragmentGame extends SensorFragment {
         view.setFood(BitmapFactory.decodeResource(getContext().getResources(), R.drawable.cale_kosnica_medium));
         Display display = getActivity().getWindowManager().getDefaultDisplay();
         view.setMaxX(display.getWidth());
-        view.setMaxY(display.getHeight());
+        view.setMaxY((int)(display.getHeight()*0.9));
         view.setSeeds();
-        view.setWidthFood(500);
-        view.setHeightFood(800);
+        view.setWidthFood(400);
+        view.setHeightFood(100);
         view.setPoints((TextView) getView().findViewById(R.id.tvCoins));
         view.setHighScore((TextView) getView().findViewById(R.id.tvHighScore));
         view.setTime((TextView) getView().findViewById(R.id.tvTime));
