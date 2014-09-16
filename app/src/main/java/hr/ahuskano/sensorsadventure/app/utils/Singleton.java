@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.utils;
+package hr.ahuskano.sensorsadventure.app.utils;
 
 import android.hardware.Sensor;
 

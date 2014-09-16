@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.content.Context;
 import android.hardware.Sensor;

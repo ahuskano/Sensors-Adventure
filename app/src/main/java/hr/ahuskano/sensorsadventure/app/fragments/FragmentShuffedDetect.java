@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/25/2014.

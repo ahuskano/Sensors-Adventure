@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app;
+package hr.ahuskano.sensorsadventure.app;
 
 import android.app.Application;
 
@@ -6,6 +6,8 @@ import com.google.android.gms.analytics.GoogleAnalytics;
 import com.google.android.gms.analytics.Tracker;
 
 import java.util.HashMap;
+
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/7/2014.

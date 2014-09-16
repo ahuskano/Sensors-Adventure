@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.types;
+package hr.ahuskano.sensorsadventure.app.types;
 
 /**
  * Created by ahuskano on 8/23/2014.

@@ -1,8 +1,10 @@
-package hr.ahuskano.wufy.app;
+package hr.ahuskano.sensorsadventure.app;
 
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/7/2014.

@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app;
+package hr.ahuskano.sensorsadventure.app;
 
 import android.os.Bundle;
 import android.util.Log;
@@ -13,9 +13,10 @@ import com.google.android.gms.analytics.Tracker;
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
-import hr.ahuskano.wufy.app.types.Item;
-import hr.ahuskano.wufy.app.utils.Singleton;
-import hr.ahuskano.wufy.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.types.Item;
+import hr.ahuskano.sensorsadventure.app.utils.Singleton;
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.R;
 
 
 public class MainActivity extends DrawerMenuActivity {

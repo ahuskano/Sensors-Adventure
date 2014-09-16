@@ -5,12 +5,12 @@
     android:layout_height="match_parent">
 
 
-    <hr.ahuskano.wufy.app.views.GameView
+    <hr.ahuskano.sensorsadventure.app.views.GameView
         android:id="@+id/view"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent">
 
-    </hr.ahuskano.wufy.app.views.GameView>
+    </hr.ahuskano.sensorsadventure.app.views.GameView>
 
     <TextView
         android:id="@+id/tvHighScore"

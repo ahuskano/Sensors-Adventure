@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.content.Context;
 import android.hardware.Sensor;
@@ -10,8 +10,8 @@ import android.view.View;
 import android.widget.TableRow;
 import android.widget.TextView;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.utils.Singleton;
+import hr.ahuskano.sensorsadventure.app.utils.Singleton;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.

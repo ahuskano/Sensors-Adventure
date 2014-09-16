@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.views;
+package hr.ahuskano.sensorsadventure.app.views;
 
 import android.content.Context;
 import android.graphics.Canvas;

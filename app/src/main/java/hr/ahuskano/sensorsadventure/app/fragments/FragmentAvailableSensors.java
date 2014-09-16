@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.content.Intent;
 import android.hardware.Sensor;
@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.SensorDetailsActivity;
-import hr.ahuskano.wufy.app.adapters.SensorListAdapter;
-import hr.ahuskano.wufy.app.utils.Singleton;
-import hr.ahuskano.wufy.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.SensorDetailsActivity;
+import hr.ahuskano.sensorsadventure.app.adapters.SensorListAdapter;
+import hr.ahuskano.sensorsadventure.app.utils.Singleton;
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.

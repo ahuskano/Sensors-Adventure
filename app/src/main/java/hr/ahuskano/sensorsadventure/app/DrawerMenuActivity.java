@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app;
+package hr.ahuskano.sensorsadventure.app;
 
 import android.hardware.Sensor;
 import android.os.Bundle;
@@ -13,9 +13,9 @@ import net.simonvt.menudrawer.Position;
 import java.util.ArrayList;
 import java.util.List;
 
-import hr.ahuskano.wufy.app.adapters.MenuAdapter;
-import hr.ahuskano.wufy.app.types.Item;
-import hr.ahuskano.wufy.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.adapters.MenuAdapter;
+import hr.ahuskano.sensorsadventure.app.types.Item;
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
 
 /**
  * Created by ahuskano on 8/23/2014.

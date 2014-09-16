@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.utils;
+package hr.ahuskano.sensorsadventure.app.utils;
 
 import android.content.Context;
 import android.graphics.Typeface;
@@ -9,12 +9,12 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import hr.ahuskano.wufy.app.DrawerMenuActivity;
-import hr.ahuskano.wufy.app.fragments.FragmentAvailableSensors;
-import hr.ahuskano.wufy.app.fragments.FragmentCompas;
-import hr.ahuskano.wufy.app.fragments.FragmentGame;
-import hr.ahuskano.wufy.app.fragments.FragmentLight;
-import hr.ahuskano.wufy.app.fragments.FragmentShuffedDetect;
+import hr.ahuskano.sensorsadventure.app.DrawerMenuActivity;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentAvailableSensors;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentCompas;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentGame;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentLight;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentShuffedDetect;
 
 /**
  * Created by ahuskano on 8/23/2014.

@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.dialogs;
+package hr.ahuskano.sensorsadventure.app.dialogs;
 
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
@@ -6,7 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/4/2014.

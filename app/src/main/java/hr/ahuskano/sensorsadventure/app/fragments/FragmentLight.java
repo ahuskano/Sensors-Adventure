@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
@@ -8,8 +8,8 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.views.LightView;
+import hr.ahuskano.sensorsadventure.app.views.LightView;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/26/2014.

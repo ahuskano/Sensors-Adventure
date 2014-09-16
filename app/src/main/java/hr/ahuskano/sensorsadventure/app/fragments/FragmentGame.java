@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.fragments;
+package hr.ahuskano.sensorsadventure.app.fragments;
 
 import android.graphics.BitmapFactory;
 import android.hardware.Sensor;
@@ -9,8 +9,8 @@ import android.view.Display;
 import android.view.View;
 import android.widget.TextView;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.views.GameView;
+import hr.ahuskano.sensorsadventure.app.views.GameView;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/4/2014.

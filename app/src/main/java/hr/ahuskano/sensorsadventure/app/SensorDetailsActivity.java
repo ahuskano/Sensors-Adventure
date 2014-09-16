@@ -1,10 +1,11 @@
-package hr.ahuskano.wufy.app;
+package hr.ahuskano.sensorsadventure.app;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.widget.FrameLayout;
 
-import hr.ahuskano.wufy.app.fragments.FragmentSensorDetails;
+import hr.ahuskano.sensorsadventure.app.fragments.FragmentSensorDetails;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/24/2014.

@@ -1,8 +1,8 @@
-package hr.ahuskano.wufy.app.types;
+package hr.ahuskano.sensorsadventure.app.types;
 
 import android.content.Context;
 
-import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.

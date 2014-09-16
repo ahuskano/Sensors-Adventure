@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.adapters;
+package hr.ahuskano.sensorsadventure.app.adapters;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -11,10 +11,10 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.types.Category;
-import hr.ahuskano.wufy.app.types.Item;
-import hr.ahuskano.wufy.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.types.Category;
+import hr.ahuskano.sensorsadventure.app.types.Item;
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.

@@ -1,4 +1,4 @@
-package hr.ahuskano.wufy.app.views;
+package hr.ahuskano.sensorsadventure.app.views;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -15,8 +15,8 @@ import android.widget.Toast;
 
 import java.util.Random;
 
-import hr.ahuskano.wufy.app.R;
-import hr.ahuskano.wufy.app.utils.SharedPreferenceManagment;
+import hr.ahuskano.sensorsadventure.app.utils.SharedPreferenceManagment;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/4/2014.

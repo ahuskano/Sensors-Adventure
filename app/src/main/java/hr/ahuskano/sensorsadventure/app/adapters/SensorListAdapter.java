@@ -1,8 +1,7 @@
-package hr.ahuskano.wufy.app.adapters;
+package hr.ahuskano.sensorsadventure.app.adapters;
 
 import android.content.Context;
 import android.hardware.Sensor;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,7 +10,7 @@ import android.widget.TextView;
 
 import java.util.List;
 
-import hr.ahuskano.wufy.app.R;
+import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.

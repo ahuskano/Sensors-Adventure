@@ -1,8 +1,7 @@
-package hr.ahuskano.wufy.app.utils;
+package hr.ahuskano.sensorsadventure.app.utils;
 
 import android.content.Context;
 import android.content.SharedPreferences;
-import android.util.Log;
 
 /**
  * Created by ahuskano on 9/7/2014.
