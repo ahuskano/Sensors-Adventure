@@ -79,8 +79,10 @@ public class FragmentGame extends SensorFragment {
         view.setMaxX(display.getWidth());
         view.setMaxY((int)(display.getHeight()*0.9));
         view.setSeeds();
-        view.setWidthFood(100);
-        view.setHeightFood(100);
+        int  x=10>display.getWidth()?(int)(display.getWidth()*0.5):10;
+        int  y=10>display.getHeight()?(int)(display.getHeight()*0.5):10;
+        view.setWidthFood(x);
+        view.setHeightFood(y);
         view.setPoints((TextView) getView().findViewById(R.id.tvCoins));
         view.setHighScore((TextView) getView().findViewById(R.id.tvHighScore));
         view.setTime((TextView) getView().findViewById(R.id.tvTime));

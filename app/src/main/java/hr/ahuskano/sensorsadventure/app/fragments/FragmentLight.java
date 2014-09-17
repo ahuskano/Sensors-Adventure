@@ -4,6 +4,7 @@ import android.hardware.Sensor;
 import android.hardware.SensorEvent;
 import android.hardware.SensorManager;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -20,13 +21,17 @@ public class FragmentLight extends SensorFragment {
     private LightView view;
     private ImageView image;
     private TextView label;
+    private float THRESHOLD_TOP=0.2f;
+    private float THRESHOLD_DOWN=0.4f;
+    private float THRESHOLD_LEFT=0.2f;
+    private float THRESHOLD_RIGHT=0.2f;
 
 
     @Override
     public void sensorEvent(SensorEvent sensorEvent) {
         if ((int) sensorEvent.values[0] > 0)
             if (view != null) {
-                this.view.setPosition((int) (image.getLeft() * 2.2), (int) (image.getTop() * 2.3), (int) (image.getRight() * 0.85), (int) (image.getBottom() * 0.65));
+                this.view.setPosition((int) (image.getLeft()+(image.getWidth()*THRESHOLD_LEFT)), (int) (image.getTop()+(image.getHeight()*THRESHOLD_TOP)), (int) (image.getRight()-(image.getWidth()*THRESHOLD_RIGHT)), (int) (image.getBottom()-(image.getHeight()*THRESHOLD_DOWN)));
                 this.view.setColor((int) sensorEvent.values[0]);
                 this.view.invalidate();
                 this.label.setText(getString(R.string.light_label) + sensorEvent.values[0]);

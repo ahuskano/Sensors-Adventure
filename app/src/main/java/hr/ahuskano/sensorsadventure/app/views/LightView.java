@@ -15,6 +15,7 @@ public class LightView extends View {
 
     private ShapeDrawable shape;
 
+
     public LightView(Context context) {
         super(context);
         init();
