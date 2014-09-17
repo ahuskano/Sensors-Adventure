@@ -151,12 +151,7 @@ public class GameView extends ImageView {
             canvas.drawBitmap(food, widthFood, heightFood, null);
 
         }
-        if(food==null){
-            Log.d("testiranje", "food je null");
-        }else{
-            Log.d("testiranje","food nije null HEIGHT: " + food.getHeight()+" WIDTH: "+ food.getWidth()+ " W: "+ widthFood+" H: "+heightFood+ " MAX: "+ maxX+" MIN: "+ maxY);
 
-        }
         refresh();
         invalidate();
     }
