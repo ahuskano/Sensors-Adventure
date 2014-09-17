@@ -6,9 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.FrameLayout;
 
-import com.google.android.gms.analytics.GoogleAnalytics;
-import com.google.android.gms.analytics.HitBuilders;
-import com.google.android.gms.analytics.Tracker;
+
 
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
@@ -93,7 +91,6 @@ public class MainActivity extends DrawerMenuActivity {
     protected void onMenuItemClicked(int position, Item item) {
         getSupportFragmentManager().beginTransaction().replace(container.getId(), Utils.provideFragment(item.getId())).commit();
         available_fragment = item.getId();
-        sendTrack();
         /*
         switch (item.getId()) {
             case FRAGMENT_AVAILABLE_SENSORS:
@@ -114,15 +111,6 @@ public class MainActivity extends DrawerMenuActivity {
         }
         */
         menuDrawer.closeMenu();
-    }
-
-    private void sendTrack() {
-        Log.d("test","sendTrack");
-
-        Tracker tracker = GoogleAnalytics.getInstance(this).newTracker("UA-47468713-2");
-        tracker.setScreenName("alen");
-        tracker.send(new HitBuilders.EventBuilder().setAction("klik").setCategory("kategotija")
-                .build());
     }
 
     @Override

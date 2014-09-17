@@ -16,9 +16,7 @@ import hr.ahuskano.sensorsadventure.app.R;
  */
 public class FragmentCompas extends SensorFragment {
 
-    private SensorManager sensorManager;
     private ImageView compas_image;
-    private Sensor sensor;
     private float lastDegree = 0f;
 
     private final String TAG = FragmentCompas.class.getSimpleName();

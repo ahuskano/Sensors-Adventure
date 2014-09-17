@@ -4,7 +4,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 
-import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 9/7/2014.
@@ -15,7 +14,7 @@ public class SplashActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
-        getActionBar().hide();
+        //getActionBar().hide();
         new Thread() {
             @Override
             public void run() {

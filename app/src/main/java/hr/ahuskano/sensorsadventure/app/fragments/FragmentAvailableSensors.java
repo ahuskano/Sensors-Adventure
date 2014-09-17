@@ -33,7 +33,6 @@ public class FragmentAvailableSensors extends BaseFragment implements AdapterVie
         sensorListAdapter = new SensorListAdapter(getContext(), Utils.getAvailableSensors(getContext()));
         listView.setAdapter(sensorListAdapter);
         listView.setOnItemClickListener(this);
-
     }
 
     @Override

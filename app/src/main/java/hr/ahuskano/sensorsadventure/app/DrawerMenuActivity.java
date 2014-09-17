@@ -29,7 +29,7 @@ public abstract class DrawerMenuActivity extends FragmentActivity implements Men
     public static final int FRAGMENT_GAME = 5;
 
     private static final String KEY_ACTIVE_POSITION =
-            "hr.ahuskano.wufy.app.drawer.active";
+            "hr.ahuskano.sensorsadventure.app.drawer.active";
 
     protected MenuAdapter menuAdapter;
     protected MenuDrawer menuDrawer;

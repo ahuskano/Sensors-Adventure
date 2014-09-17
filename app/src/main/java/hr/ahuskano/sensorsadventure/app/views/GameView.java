@@ -9,6 +9,7 @@ import android.graphics.Rect;
 import android.os.CountDownTimer;
 import android.support.v4.app.FragmentManager;
 import android.util.AttributeSet;
+import android.util.Log;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -148,6 +149,12 @@ public class GameView extends ImageView {
 
             canvas.drawBitmap(boss, xBoss, yBoss, null);
             canvas.drawBitmap(food, widthFood, heightFood, null);
+
+        }
+        if(food==null){
+            Log.d("testiranje", "food je null");
+        }else{
+            Log.d("testiranje","food nije null HEIGHT: " + food.getHeight()+" WIDTH: "+ food.getWidth()+ " W: "+ widthFood+" H: "+heightFood+ " MAX: "+ maxX+" MIN: "+ maxY);
 
         }
         refresh();

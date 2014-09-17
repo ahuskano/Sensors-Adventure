@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "hr.ahuskano.wufy.app"
-        minSdkVersion 14
+        minSdkVersion 8
         targetSdkVersion 19
         versionCode 1
         versionName "1.0"
@@ -23,7 +23,6 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile 'com.android.support:appcompat-v7:19.+'
     compile 'net.simonvt.menudrawer:menudrawer:3.0.6'
-    compile 'com.google.android.gms:play-services:4.3.+'
 
 
 }
