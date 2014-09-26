@@ -8,6 +8,8 @@ import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.view.View;
 
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
+
 /**
  * Created by ahuskano on 8/25/2014.
  */
@@ -46,6 +48,7 @@ public abstract class SensorFragment extends BaseFragment implements SensorEvent
         super.onViewCreated(view, savedInstanceState);
         initView(view, savedInstanceState);
         instanceSensor();
+        Utils.sendScreenName(getLogTag(), getActivity());
     }
 
     @Override

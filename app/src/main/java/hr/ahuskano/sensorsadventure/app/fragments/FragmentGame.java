@@ -86,6 +86,7 @@ public class FragmentGame extends SensorFragment {
         view.setPoints((TextView) getView().findViewById(R.id.tvCoins));
         view.setHighScore((TextView) getView().findViewById(R.id.tvHighScore));
         view.setTime((TextView) getView().findViewById(R.id.tvTime));
+        view.setActivity(getActivity());
         view.start();
     }
 

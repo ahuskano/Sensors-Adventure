@@ -1,5 +1,6 @@
 package hr.ahuskano.sensorsadventure.app.views;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -18,6 +19,7 @@ import java.util.Random;
 
 import hr.ahuskano.sensorsadventure.app.utils.SharedPreferenceManagment;
 import hr.ahuskano.sensorsadventure.app.R;
+import hr.ahuskano.sensorsadventure.app.utils.Utils;
 
 /**
  * Created by ahuskano on 9/4/2014.
@@ -25,6 +27,7 @@ import hr.ahuskano.sensorsadventure.app.R;
 public class GameView extends ImageView {
 
     private Context context;
+    private Activity activity;
     private TextView time;
     private TextView points;
     private TextView highScore;
@@ -102,6 +105,7 @@ public class GameView extends ImageView {
                         stoped = true;
                         if (SharedPreferenceManagment.getScore(getContext()) < coins) {
                             SharedPreferenceManagment.saveScore(getContext(), coins);
+                            Utils.sendScoreEvent(coins,activity);
                             highScore.setText(context.getString(R.string.high_score_label) + coins);
                         }
 
@@ -250,5 +254,9 @@ public class GameView extends ImageView {
 
     public void setFm(FragmentManager fm) {
         this.fm = fm;
+    }
+
+    public void setActivity(Activity activity) {
+        this.activity = activity;
     }
 }

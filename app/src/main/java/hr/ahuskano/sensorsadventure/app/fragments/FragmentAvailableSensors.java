@@ -7,11 +7,11 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 
+import hr.ahuskano.sensorsadventure.app.R;
 import hr.ahuskano.sensorsadventure.app.SensorDetailsActivity;
 import hr.ahuskano.sensorsadventure.app.adapters.SensorListAdapter;
 import hr.ahuskano.sensorsadventure.app.utils.Singleton;
 import hr.ahuskano.sensorsadventure.app.utils.Utils;
-import hr.ahuskano.sensorsadventure.app.R;
 
 /**
  * Created by ahuskano on 8/23/2014.
@@ -43,6 +43,7 @@ public class FragmentAvailableSensors extends BaseFragment implements AdapterVie
     @Override
     public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
         Singleton.getInstance().setSensor((Sensor) sensorListAdapter.getItem(position));
+        Utils.sendSensorEvent(((Sensor) sensorListAdapter.getItem(position)).getName(),getActivity());
         startActivity(new Intent(getActivity(), SensorDetailsActivity.class));
     }
 }
