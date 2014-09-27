@@ -7,10 +7,14 @@ import android.view.MenuItem;
 import android.widget.FrameLayout;
 
 
+import com.google.android.gms.analytics.HitBuilders;
+import com.google.android.gms.analytics.Tracker;
 
 import net.simonvt.menudrawer.MenuDrawer;
 import net.simonvt.menudrawer.Position;
 
+import hotchemi.android.rate.AppRate;
+import hotchemi.android.rate.OnClickButtonListener;
 import hr.ahuskano.sensorsadventure.app.types.Item;
 import hr.ahuskano.sensorsadventure.app.utils.Singleton;
 import hr.ahuskano.sensorsadventure.app.utils.Utils;
@@ -30,9 +34,20 @@ public class MainActivity extends DrawerMenuActivity {
             available_fragment = savedInstanceState.getInt(KEY_BUNDLE);
         initDrawer();
         initView();
-
-
+        initRateDialog();
     }
+
+    private void initRateDialog() {
+        AppRate.with(this)
+                .setInstallDays(1) // default 10, 0 means install day.
+                .setLaunchTimes(3) // default 10
+                .setRemindInterval(2) // default 1
+                .setShowNeutralButton(true) // default true
+                .monitor();
+        AppRate.showRateDialogIfMeetsConditions(this);
+    }
+
+
 
     private void initView() {
         container = (FrameLayout) findViewById(R.id.flFragments);
@@ -127,4 +142,5 @@ public class MainActivity extends DrawerMenuActivity {
         super.onStart();
 
     }
+
 }
